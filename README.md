@@ -1,5 +1,18 @@
 # sqlcoin
 
+### System table
+
+```
+
+create table sysusers (
+   nickname varchar(64),
+   algo varchar(20),
+   public_key blob(65),
+   
+);
+
+```
+
 ### Tokens
 
 ```
