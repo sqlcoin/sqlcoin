@@ -10,10 +10,13 @@ create table users (
    algo varchar(20),
    pubkey blob(65),
    restore varchar(64),
-   friend1 varchar(64),
-   friend2 varchar(64),
-   friend3 varchar(64),
-   constraint update signed by nickname or restore or (friend1 and friend2 and friend3)
+   stakeholders table (
+      nickname varchar(64),
+      constraint nick_ref
+      foreign key (nickname)
+      references users(nickname),
+   ),
+   constraint update signed by (nickname, restore, quorum(stackholders))
 );
 
 ```
