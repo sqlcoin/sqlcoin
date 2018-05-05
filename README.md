@@ -12,9 +12,7 @@ create table users (
    restore varchar(64),
    stakeholders table (
       nickname varchar(64),
-      constraint nick_ref
-      foreign key (nickname)
-      references users(nickname),
+      constraint nick_ref foreign key (nickname) references users(nickname)
    ),
    constraint update signed by (nickname, restore, quorum(stackholders))
 );
