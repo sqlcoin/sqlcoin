@@ -4,11 +4,16 @@
 
 ```
 
-create table sysusers (
+create table users (
    nickname varchar(64),
+   type char(1),   // 'I' - individual, 'C' - corporation, 'P' - partnership, 'T' - trust
    algo varchar(20),
-   public_key blob(65),
-   
+   pubkey blob(65),
+   restore varchar(64),
+   friend1 varchar(64),
+   friend2 varchar(64),
+   friend3 varchar(64),
+   constraint update signed by nickname or restore or (friend1 and friend2 and friend3)
 );
 
 ```
@@ -27,8 +32,8 @@ create table sqlcoin (
 
 money transfer transaction:
 
-update table sqlcoin set amount=amount+@1 where owner=‘bob’;
-update table sqlcoin set amount=amount-@1 where owner=‘alice’;
+update table sqlcoin debit amount on @1 where owner=‘bob’;
+update table sqlcoin credit amount on @1 where owner=‘alice’;
 signed by ‘alice’;
 ```
 
