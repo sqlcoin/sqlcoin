@@ -14,7 +14,7 @@ create table users (
       nickname varchar(64),
       constraint nick_ref foreign key (nickname) references users(nickname)
    ),
-   constraint update signed by (nickname, restore, quorum(stackholders))
+   constraint update signed by any (nickname, restore, quorum(stackholders))
 );
 
 ```
