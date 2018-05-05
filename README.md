@@ -7,7 +7,7 @@
 create table users (
    nickname varchar(64),
    type char(1),   // 'I' - individual, 'C' - corporation, 'P' - partnership, 'T' - trust
-   algo varchar(20),
+   algo varchar(20), // 'ECDSA'
    pubkey blob(65),
    restore varchar(64),
    stakeholders table (
