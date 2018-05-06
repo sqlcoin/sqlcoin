@@ -24,7 +24,7 @@ create table us_white_list (
   constraint nick_ref foreign key (nickname) references users(nickname)
 );
 
-create talbe us_only_coin (
+create table us_only_coin (
    owner varchar(64),
    amount decimal(10, 6),
    primary key (owner),
