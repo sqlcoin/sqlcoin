@@ -20,13 +20,15 @@
 ### System tables
 
 Nickname 'system' is reserved. It defines a system database.
+All users in the system are placed in a one table 'users'.
 
+Definition of the table 'users':
 ```
 create table system.users (
-   nickname varchar(64),
-   algo varchar(20), // 'ECDSA'
-   pubkey blob(65),
-   restorekey blob(65),
+   nickname varchar(64) not null,
+   algo varchar(10) not null, // 'ECDSA'
+   pubkey varblob(256) not null,
+   restorekey varblob(256) default null,
    primary key (nickname),
    owner by nickname
 );
@@ -69,8 +71,8 @@ create table sqlcoin (
 
 money transfer transaction:
 
-update table sqlcoin debit amount on @1 where owner=‘bob’;
-update table sqlcoin credit amount on @1 where owner=‘alice’;
+update table sqlcoin debit(amount, @1) where owner=‘bob’;
+update table sqlcoin credit(amount, @1) where owner=‘alice’;
 signed by ‘alice’;
 ```
 
