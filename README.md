@@ -1,10 +1,28 @@
 # sqlcoin
 
-### System table
+### Identifier Names
+
+* ASCII: [0-9,a-z,A-Z$_]
+* Extended: U+0080 .. U+FFFF
+* Identifiers are stored as Unicode (UTF-8)
+* Identifiers are not case-sensitive
+* Identifiers can't end with space characters
+* Identifiers are not permitted to contain the ASCII NUL character (U+0000) and supplementary characters (U+10000 and higher)
+* Identifier names may begin with a numeral, but can't only contain numerals unless quoted
+* Identifier maximum length is 64 characters
+* Identifier can not be a reserve word
+
+### Namespace
+
+* Nickname of the user is the identifier
+* Nickname is using as database name
+
+### System tables
+
+Nickname 'system' is reserved. It defines a system database.
 
 ```
-
-create table users (
+create table system.users (
    nickname varchar(64),
    algo varchar(20), // 'ECDSA'
    pubkey blob(65),
