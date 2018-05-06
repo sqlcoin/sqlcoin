@@ -30,7 +30,7 @@ create table system.users (
    pubkey varblob(256) not null,
    restorekey varblob(256) default null,
    primary key (nickname),
-   owner by nickname
+   constraint signed by (select pubkey, restorekey)
 );
 
 ```
