@@ -37,7 +37,7 @@ Users can be verified by another users and came to special lists.
 * Identifiers are not case-sensitive
 * Identifiers can't end with space characters
 * Identifiers are not permitted to contain the ASCII NUL character (U+0000) and supplementary characters (U+10000 and higher)
-* Identifier names may begin with a numeral, but can't only contain numerals unless quoted
+* Identifier names may begin with a numeral, but can't only contain numerals
 * Identifier maximum length is 64 characters
 * Identifier can not be a reserve word
 
