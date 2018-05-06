@@ -91,7 +91,21 @@ update asset1 set owner='bob' where asset='picture_num_123'; -- signed by 'alice
 update asset1 set owner='bob' where asset in ('picture_num_123', 'realestate_num_333'); -- signed both by 'alice' and 'craig' as prevoius owners of assets, no need signature of bob
 
 
+create table asset2 (
+   asset varchar(128),
+   owner1 user,
+   owner2 user,
+   primary key (asset),
+   constraint asset_col collectible (asset) signed by any(owner1, owner2)
+);
 
+create table asset3 (
+   asset varchar(128),
+   owner1 user,
+   owner2 user,
+   primary key (asset),
+   constraint asset_col collectible (asset) signed by all(owner1, owner2)
+);
 
 
 ```
