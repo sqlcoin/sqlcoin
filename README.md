@@ -1,5 +1,17 @@
 # sqlcoin
 
+### Architecture
+
+Distributed database to record ownerships and assets online. Public utility.
+
+### Ownership
+
+* Single user
+* OR for two users
+* AND for two users
+* List of users with shares (%)
+* List of users with stocks (numbers, emission)
+
 ### Identifier Names
 
 * ASCII: [0-9,a-z,A-Z$_]
