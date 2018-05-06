@@ -29,7 +29,9 @@ create table sqlcoin (
    constraint owner_ref
     foreign key (nickname)
     references users(nickname),
-   constraint sum(amount) == 100000000
+   constraint sum(amount) == 100000000,
+   constraint amount >= 0.0,
+   constraint collectible amount
 ) issued by 'alice';
 
 money transfer transaction:
@@ -52,6 +54,8 @@ create table
 create table org1 (
    stakeholder varchar(64),
    share decimal(3,4),
-   constraint sum(share) == 100.0
+   constraint sum(share) == 100.0,
+   constraint amount > 0,
+   constraint collectible amount
 ) issued by 'alice';
 ```
