@@ -7,10 +7,15 @@ Distributed database to record ownerships and assets online. Public utility.
 ### Ownership
 
 * Single user
-* OR for two users
-* AND for two users
-* List of users with shares (%)
-* List of users with stocks (numbers, emission)
+* OR for two users (good for family)
+* AND for two users (good for family)
+* List of users with shares (%) (good for LLP, LLC, S-Corp)
+* List of users with stocks (numbers, emission) (good for C-Corp)
+
+### PII
+
+PII data must not be stored in public utility database.
+For the purpose of trust for the user there are vefification tables.
 
 ### Identifier Names
 
