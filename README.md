@@ -80,13 +80,19 @@ signed by ‘alice’;
 
 ```
 create table asset1 (
-   owner varchar(64),
-   asset varchar(64),
+   asset varchar(128),
+   owner user,
    primary key (asset),
-   constraint owner_ref foreign key (owner) references users(nickname),
-   constraint asset_unique unique(asset),
-   constraint collectible asset
+   constraint asset_col collectible (asset) signed by (owner)
 );
+
+update asset1 set owner='bob' where asset='picture_num_123'; -- signed by 'alice' and previous owner is 'alice', 'bob' no need to sign this
+
+update asset1 set owner='bob' where asset in ('picture_num_123', 'realestate_num_333'); -- signed both by 'alice' and 'craig' as prevoius owners of assets, no need signature of bob
+
+
+
+
 
 ```
 
