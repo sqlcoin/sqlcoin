@@ -23,10 +23,10 @@ Users can be verified by another users and came to special lists.
 
 ### Collectibles
 
-Collectible elements must not be negative.
-Collectible elements can not be seized.
-Collectible elements can be debited to anybody.
-Collectible elements can be credited only by signature(signatures) of owner(s).
+* Collectible elements must not be negative.
+* Collectible elements can not be seized.
+* Collectible elements can be debited to anybody.
+* Collectible elements can be credited only by signature(signatures) of owner(s).
 
 
 ### Identifier Names
