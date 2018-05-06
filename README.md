@@ -16,7 +16,10 @@ Public utility distributed database to record ownerships and assets online.
 ### PII
 
 PII data must not be stored in public utility database.
-For the purpose of trust for the user there are vefification tables.
+
+### Verification
+
+Users can be verified by another users and came to special lists.
 
 ### Identifier Names
 
