@@ -27,7 +27,7 @@ Users can be verified by another users and came to special lists.
 * Collectible elements can not be seized.
 * Collectible elements can be debited to anybody.
 * Collectible elements can be credited only by signature(signatures) of owner(s).
-* Collectible elements have limited quantity (100%, 100000 shares, 10000000 coins, 1 identified item).
+* Collectible elements must have limited quantity (100%, 100000 shares, 10000000 coins, 1 identified item).
 
 ### Identifier Names
 
