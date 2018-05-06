@@ -34,7 +34,7 @@ Users can be verified by another users and came to special lists.
 * ASCII: [0-9,a-z,A-Z$_]
 * Extended: U+0080 .. U+FFFF
 * Identifiers are stored as Unicode (UTF-8)
-* Identifiers are not case-sensitive
+* Identifiers are case-insensitive
 * Identifiers can't end with space characters
 * Identifiers are not permitted to contain the ASCII NUL character (U+0000) and supplementary characters (U+10000 and higher)
 * Identifier names may begin with a numeral, but can't only contain numerals
