@@ -30,7 +30,7 @@ create table sqlcoin (
     foreign key (nickname)
     references users(nickname),
    constraint sum(amount) == 100000000
-);
+) issued by 'alice';
 
 money transfer transaction:
 
@@ -44,4 +44,14 @@ signed by ‘alice’;
 ```
 create table 
 
+```
+
+### Organizations
+
+```
+create table org1 (
+   stakeholder varchar(64),
+   share decimal(3,4),
+   constraint sum(share) == 100.0
+) issued by 'alice';
 ```
