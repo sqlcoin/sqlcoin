@@ -6,16 +6,32 @@
 
 create table users (
    nickname varchar(64),
-   type char(1),   // 'I' - individual, 'C' - corporation, 'P' - partnership, 'T' - trust
    algo varchar(20), // 'ECDSA'
    pubkey blob(65),
-   restore varchar(64),
-   stakeholders table (
-      nickname varchar(64),
-      constraint nick_ref foreign key (nickname) references users(nickname)
-   ),
-   constraint restore_ref foreign key (nickname) references users(nickname),
-   constraint update signed by any(nickname, restore, quorum(stackholders))
+   restorekey blob(65),
+   primary key (nickname),
+   owner by nickname
+);
+
+```
+
+### White List
+
+```
+create table us_white_list (
+  nickname varchar(64),
+  primary key (nickname),
+  constraint nick_ref foreign key (nickname) references users(nickname)
+);
+
+create talbe us_only_coin (
+   owner varchar(64),
+   amount decimal(10, 6),
+   primary key (owner),
+   constraint owner_ref foreign key (owner) references us_white_list(nickname),
+   constraint sum(amount) == 100000000,
+   constraint amount >= 0.0,
+   constraint collectible amount
 );
 
 ```
@@ -26,11 +42,12 @@ create table users (
 create table sqlcoin (
    owner varchar(64),
    amount decimal(10, 6),
+   primary key (owner),
    constraint owner_ref foreign key (owner) references users(nickname),
    constraint sum(amount) == 100000000,
    constraint amount >= 0.0,
    constraint collectible amount
-) issued by 'alice';
+);
 
 money transfer transaction:
 
@@ -45,8 +62,9 @@ signed by ‘alice’;
 create table asset1 (
    owner varchar(64),
    asset varchar(64),
+   primary key (asset),
    constraint owner_ref foreign key (owner) references users(nickname),
-   constraint asset_unique unique(asset)
+   constraint asset_unique unique(asset),
    constraint collectible asset
 );
 
@@ -58,9 +76,10 @@ create table asset1 (
 create table org1 (
    stakeholder varchar(64),
    share decimal(3,4),
+   primary key (stakeholder),
    constraint stakeholder_ref foreign key (stakeholder) references users(nickname),   
    constraint sum(share) == 100.0,
    constraint amount > 0,
    constraint collectible amount,
-) issued by 'alice';
+);
 ```
