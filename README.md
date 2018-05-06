@@ -26,9 +26,7 @@ create table users (
 create table sqlcoin (
    owner varchar(64),
    amount decimal(10, 6),
-   constraint owner_ref
-    foreign key (nickname)
-    references users(nickname),
+   constraint owner_ref foreign key (owner) references users(nickname),
    constraint sum(amount) == 100000000,
    constraint amount >= 0.0,
    constraint collectible amount
@@ -44,7 +42,13 @@ signed by ‘alice’;
 ### Assets
 
 ```
-create table 
+create table asset1 (
+   owner varchar(64),
+   asset varchar(64),
+   constraint owner_ref foreign key (owner) references users(nickname),
+   constraint asset_unique unique(asset)
+   constraint collectible asset
+);
 
 ```
 
@@ -54,8 +58,9 @@ create table
 create table org1 (
    stakeholder varchar(64),
    share decimal(3,4),
+   constraint stakeholder_ref foreign key (stakeholder) references users(nickname),   
    constraint sum(share) == 100.0,
    constraint amount > 0,
-   constraint collectible amount
+   constraint collectible amount,
 ) issued by 'alice';
 ```
