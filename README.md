@@ -29,7 +29,7 @@ create table sqlcoin (
    constraint owner_ref
     foreign key (nickname)
     references users(nickname),
-   constraint amount_chain collectible(amount)
+   constraint sum(amount) == 100000000
 );
 
 money transfer transaction:
