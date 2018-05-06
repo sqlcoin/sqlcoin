@@ -9,9 +9,10 @@ Public utility distributed database to record ownerships and assets online.
 * Single user
 * OR for two users (good for family)
 * AND for two users (good for family)
-* List of users with equal rights (good for LLP)
+* OR for list of users (good for list of users with equal rights, for example LLP)
 * List of users with shares (%) (good for LLC, S-Corp)
 * List of users with stocks (quantity) (good for C-Corp)
+* Proxy
 
 ### PII
 
