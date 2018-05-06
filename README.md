@@ -9,7 +9,8 @@ Distributed database to record ownerships and assets online. Public utility.
 * Single user
 * OR for two users (good for family)
 * AND for two users (good for family)
-* List of users with shares (%) (good for LLP, LLC, S-Corp)
+* List of users with equal rights (good for LLP)
+* List of users with shares (%) (good for LLC, S-Corp)
 * List of users with stocks (numbers, emission) (good for C-Corp)
 
 ### PII
