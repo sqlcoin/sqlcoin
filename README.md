@@ -4,6 +4,11 @@
 
 Public utility distributed database to record ownerships and assets online.
 
+### Databases
+
+* Public
+* Private
+
 ### Ownership
 
 * Single user
