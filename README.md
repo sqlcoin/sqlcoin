@@ -2,7 +2,7 @@
 
 ### Architecture
 
-Public utility distributed database to record ownerships and assets online.
+Public utility distributed database to record ownerships and assets online, distributed configurations and topologies.
 
 ### Databases
 
